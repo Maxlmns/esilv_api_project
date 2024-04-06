@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: beige; 
+            color: grey; 
+        }
+
+        .container {
+            position: relative;
+            padding: 20px;
+            background-color: beige;
+            border-bottom: 2px solid wheat;
+        }
+
+        .search-bar {
+            margin-bottom: 20px;
+        }
+
+        .search-bar input[type="text"] {
+            padding: 10px;
+            width: 200px;
+            border: 1px solid wheat;
+            border-radius: 5px;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            background-color: lightblue; 
+            color: white; 
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background-color: wheat; 
+        }
+
+        .route-links {
+            margin-top: 20px;
+        }
+
+        .route-links h2 {
+            margin-bottom: 10px;
+            color: lightblue;
+        }
+
+        .route-links ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .route-links li {
+            margin-bottom: 5px;
+        }
+
+        .route-links li a {
+            text-decoration: none;
+            color: lightblue;
+            transition: color 0.3s ease;
+        }
+
+        .route-links li a:hover {
+            color: wheat; 
+        }
+
+        h1 {
+            font-size: 20px;
+            color: lightblue;
+            margin-top: 30px;
+
+        }
+
+        .article-count {
+            font-size: 20px;
+            color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="search-bar">
+            <form action="/" method="post">
+                <input type="text" name="query" placeholder="Search a route">
+                <button>Search</button>
+            </form>
+            {% if closest_match %}
+            <a href="{{ link }}">Go to "{{ closest_match }}"</a>
+            {% endif %}
+        </div>
+
+        <div class="route-links">
+            <h2>All Route Links</h2>
+            <ul>
+                {% for route_link in routes_links: %}
+                <li><a href="{{ route_link }}">{{ route_link }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="number">
+            <h1>Number of Articles:</h1>
+            <p class="article-count">{{ length }}</p>
+        </div>
+
+    </div>
+</body>
+</html>

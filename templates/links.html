@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links</title>
+    <style>
+        h1 {
+            font-family: "Arial", sans-serif;
+            color: lightblue;
+            text-align: center;
+        }
+
+        body {
+            background-color: beige;
+            color: lightblue;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px grey;
+        }
+
+        .links-list-container {
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        .links-list {
+            list-style: none;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .links-list li {
+            margin-bottom: 10px;
+        }
+
+        .links-list li a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: lightblue;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .links-list li a:hover {
+            background-color: wheat;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Links</h1>
+    <div class="links-list-container">
+        <ul class="links-list">
+            {% for link in links %}
+                <li><a href="{{ link }}">{{ link }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

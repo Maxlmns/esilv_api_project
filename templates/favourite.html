@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favourite Link</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: beige;
+            color: grey;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: lightblue;
+        }
+
+        .link-container {
+            margin-top: 20px;
+        }
+
+        .link-container a {
+            display: inline-block;
+            padding: 20px 20px;
+            background-color: lightblue;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .link-container a:hover {
+            background-color: wheat;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Favourite Link</h1>
+        <div class="link-container">
+            <a href="{{ link }}">{{ link }}</a>
+        </div>
+    </div>
+</body>
+</html>
